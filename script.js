@@ -25,27 +25,30 @@ function queueTilesForDrawing(onComplete, tilesPerFrame = 100) {
     const tileWidth = canvas.width / gridCols;
     const tileHeight = canvas.height / gridRows;
 
-    // function drawNextBatch() {
-    //     let count = 0;
-    //     while (i < tileImages.length && count < tilesPerFrame) {
-    //         const col = i % gridCols;
-    //         const row = Math.floor(i / gridCols);
-    //         const x = col * tileWidth;
-    //         const y = row * tileHeight;
-    //         ctx.globalAlpha = 0.7;
-    //         ctx.drawImage(tileImages[i], x, y, tileWidth, tileHeight);
-    //         i++;
-    //         count++;
-    //     }
+    function drawNextBatch() {
+        ctx.globalAlpha = 1.0;
+        ctx.drawImage(bgImage, 0, 0, canvas.width / scale, canvas.height / scale);
 
-    //     if (i < tileImages.length) {
-    //         requestAnimationFrame(drawNextBatch); // Keep drawing
-    //     } else {
-    onComplete(); // Done
-    //     }
-    // }
+        let count = 0;
+        while (i < tileImages.length && count < tilesPerFrame) {
+            const col = i % gridCols;
+            const row = Math.floor(i / gridCols);
+            const x = col * tileWidth;
+            const y = row * tileHeight;
+            ctx.globalAlpha = 0.7;
+            ctx.drawImage(tileImages[i], x, y, tileWidth, tileHeight);
+            i++;
+            count++;
+        }
 
-    // drawNextBatch();
+        if (i < tileImages.length) {
+            requestAnimationFrame(drawNextBatch); // Keep drawing
+        } else {
+            onComplete(); // Done
+        }
+    }
+
+    drawNextBatch();
 }
 
 // function drawTilesProgressively() {
@@ -102,8 +105,6 @@ Promise.all([
     // Step 2: Start drawing tiles progressively
     queueTilesForDrawing(() => {
         // ✅ Step 3: When tile drawing is done, draw background
-        ctx.globalAlpha = 1.0;
-        ctx.drawImage(bgImage, 0, 0, canvas.width / scale, canvas.height / scale);
     });
 });
 
@@ -137,17 +138,17 @@ function draw() {
     }
 
     // 🧊 Draw tile images (semi-transparent)
-    // ctx.globalAlpha = 0.7;
-    // const tileWidth = gridCols > 0 ? canvas.width / gridCols : tileSize;
-    // const tileHeight = gridRows > 0 ? canvas.height / gridRows : tileSize;
+    ctx.globalAlpha = 0.7;
+    const tileWidth = gridCols > 0 ? canvas.width / gridCols : tileSize;
+    const tileHeight = gridRows > 0 ? canvas.height / gridRows : tileSize;
 
-    // for (let i = 0; i < tileImages.length; i++) {
-    //     const col = i % gridCols;
-    //     const row = Math.floor(i / gridCols);
-    //     const x = col * tileWidth;
-    //     const y = row * tileHeight;
-    //     ctx.drawImage(tileImages[i], x, y, tileWidth, tileHeight);
-    // }
+    for (let i = 0; i < tileImages.length; i++) {
+        const col = i % gridCols;
+        const row = Math.floor(i / gridCols);
+        const x = col * tileWidth;
+        const y = row * tileHeight;
+        ctx.drawImage(tileImages[i], x, y, tileWidth, tileHeight);
+    }
 
     ctx.globalAlpha = 1.0;
 }
@@ -198,4 +199,6 @@ canvas.addEventListener("wheel", (e) => {
     }
 });
 
-// window.addEventListener("resize", draw);
+window.addEventListener("resize", draw);
+
+// 1. innocent

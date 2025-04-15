@@ -25,7 +25,7 @@ canvas {
 
 @media only screen and (max-width: 350px) {
     canvas {
-        top: 8rem;
+        top: 7.5rem;
         left: 1%;
         width: 24rem;
         height: 31rem;
@@ -34,7 +34,7 @@ canvas {
 
 @media only screen and (min-width: 350px) {
     canvas {
-        top: 8rem;
+        top: 7.5rem;
         left: 2%;
         width: 24rem;
         height: 31rem;
@@ -43,9 +43,9 @@ canvas {
 
 @media only screen and (min-width: 400px) {
     canvas {
-        top: 8rem;
-        left: 5%;
-        width: 24rem;
+        top: 7.5rem;
+        left: 3%;
+        width: 25.8rem;
         height: 31rem;
     }
 }
