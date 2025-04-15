@@ -173,6 +173,64 @@ canvas.addEventListener("wheel", (e) => {
     draw();
 });
 
+// ---------mobile zooming------------
+let lastTouchDistance = null;
+
+canvas.addEventListener(
+    "touchstart",
+    (e) => {
+        if (e.touches.length === 2) {
+            const dx = e.touches[0].clientX - e.touches[1].clientX;
+            const dy = e.touches[0].clientY - e.touches[1].clientY;
+            lastTouchDistance = Math.hypot(dx, dy);
+        }
+    },
+    { passive: false }
+);
+
+canvas.addEventListener(
+    "touchmove",
+    (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+
+            const dx = e.touches[0].clientX - e.touches[1].clientX;
+            const dy = e.touches[0].clientY - e.touches[1].clientY;
+            const currentDistance = Math.hypot(dx, dy);
+
+            if (lastTouchDistance !== null) {
+                const zoomFactor = 1.02; // smoother pinch zoom
+                const deltaScale = currentDistance / lastTouchDistance;
+                const direction = deltaScale > 1 ? zoomFactor : 1 / zoomFactor;
+
+                const centerX = (e.touches[0].clientX + e.touches[1].clientX) / 2 - canvas.offsetLeft;
+                const centerY = (e.touches[0].clientY + e.touches[1].clientY) / 2 - canvas.offsetTop;
+
+                const wx = (centerX - originX) / scale;
+                const wy = (centerY - originY) / scale;
+
+                const newScale = scale * direction;
+                const minScale = 1;
+                const maxScale = 10;
+
+                if (newScale >= minScale && newScale <= maxScale) {
+                    scale = newScale;
+                    originX = centerX - wx * scale;
+                    originY = centerY - wy * scale;
+                    draw();
+                }
+            }
+
+            lastTouchDistance = currentDistance;
+        }
+    },
+    { passive: false }
+);
+
+canvas.addEventListener("touchend", () => {
+    lastTouchDistance = null;
+});
+
 window.addEventListener("resize", draw);
 
 initMosaic();
