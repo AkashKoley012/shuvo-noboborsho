@@ -25,8 +25,8 @@ canvas {
 
 @media only screen and (max-width: 350px) {
     canvas {
-        top: 6rem;
-        left: 1%;
+        top: 8rem;
+        left: 2%;
         width: 22rem;
         height: 31rem;
     }
@@ -34,8 +34,8 @@ canvas {
 
 @media only screen and (min-width: 350px) {
     canvas {
-        top: 6rem;
-        left: 1%;
+        top: 8rem;
+        left: 2%;
         width: 22rem;
         height: 31rem;
     }
@@ -43,8 +43,8 @@ canvas {
 
 @media only screen and (min-width: 400px) {
     canvas {
-        top: 6rem;
-        left: 4%;
+        top: 8rem;
+        left: 5%;
         width: 24rem;
         height: 31rem;
     }
@@ -52,8 +52,8 @@ canvas {
 
 @media only screen and (min-width: 450px) {
     canvas {
-        top: 6rem;
-        left: 8%;
+        top: 8rem;
+        left: 9%;
         width: 25.8rem;
         height: 31rem;
     }
@@ -61,8 +61,8 @@ canvas {
 
 @media only screen and (min-width: 500px) {
     canvas {
-        top: 6rem;
-        left: 12%;
+        top: 8rem;
+        left: 14%;
         width: 25.8rem;
         height: 31rem;
     }
@@ -70,8 +70,8 @@ canvas {
 
 @media only screen and (min-width: 550px) {
     canvas {
-        top: 6rem;
-        left: 16%;
+        top: 8rem;
+        left: 17.5%;
         width: 25.8rem;
         height: 31rem;
     }
@@ -79,8 +79,8 @@ canvas {
 
 @media only screen and (min-width: 600px) {
     canvas {
-        top: 6rem;
-        left: 19%;
+        top: 8rem;
+        left: 20%;
         width: 25.8rem;
         height: 31rem;
     }
@@ -88,8 +88,8 @@ canvas {
 
 @media only screen and (min-width: 650px) {
     canvas {
-        top: 6rem;
-        left: 21%;
+        top: 8rem;
+        left: 22%;
         width: 25.8rem;
         height: 31rem;
     }
@@ -97,8 +97,8 @@ canvas {
 
 @media only screen and (min-width: 700px) {
     canvas {
-        top: 6rem;
-        left: 23%;
+        top: 8rem;
+        left: 24%;
         width: 25.8rem;
         height: 31rem;
     }
@@ -106,7 +106,7 @@ canvas {
 
 @media only screen and (min-width: 750px) {
     canvas {
-        top: 6rem;
+        top: 8rem;
         left: 25%;
         width: 25.8rem;
         height: 31rem;
@@ -115,7 +115,7 @@ canvas {
 
 @media only screen and (min-width: 800px) {
     canvas {
-        top: 6rem;
+        top: 8rem;
         left: 27%;
         width: 25.8rem;
         height: 31rem;
@@ -124,7 +124,7 @@ canvas {
 
 @media only screen and (min-width: 850px) {
     canvas {
-        top: 6rem;
+        top: 8rem;
         left: 29%;
         width: 25.8rem;
         height: 31rem;
@@ -133,7 +133,7 @@ canvas {
 
 @media only screen and (min-width: 900px) {
     canvas {
-        top: 6rem;
+        top: 8rem;
         left: 29%;
         width: 25.8rem;
         height: 31rem;
@@ -142,7 +142,7 @@ canvas {
 
 @media only screen and (min-width: 950px) {
     canvas {
-        top: 6rem;
+        top: 8rem;
         left: 30%;
         width: 25.8rem;
         height: 31rem;
@@ -151,7 +151,7 @@ canvas {
 
 @media only screen and (min-width: 1000px) {
     canvas {
-        top: 6rem;
+        top: 8rem;
         left: 31%;
         width: 25.8rem;
         height: 31rem;
@@ -160,7 +160,7 @@ canvas {
 
 @media only screen and (min-width: 1050px) {
     canvas {
-        top: 6rem;
+        top: 8rem;
         left: 32%;
         width: 25.8rem;
         height: 31rem;
@@ -169,7 +169,7 @@ canvas {
 
 @media only screen and (min-width: 1100px) {
     canvas {
-        top: 6rem;
+        top: 8rem;
         left: 33%;
         width: 25.8rem;
         height: 31rem;
@@ -178,7 +178,7 @@ canvas {
 
 @media only screen and (min-width: 1150px) {
     canvas {
-        top: 6rem;
+        top: 9rem;
         left: 34%;
         width: 25.8rem;
         height: 31rem;
@@ -187,7 +187,7 @@ canvas {
 
 @media only screen and (min-width: 1200px) {
     canvas {
-        top: 6rem;
+        top: 9rem;
         left: 34%;
         width: 25.8rem;
         height: 31rem;
@@ -196,7 +196,7 @@ canvas {
 
 @media only screen and (min-width: 1300px) {
     canvas {
-        top: 6rem;
+        top: 9rem;
         left: 36%;
         width: 25.8rem;
         height: 31rem;
@@ -205,7 +205,7 @@ canvas {
 
 @media only screen and (min-width: 1400px) {
     canvas {
-        top: 6rem;
+        top: 9rem;
         left: 37%;
         width: 25.8rem;
         height: 31rem;
@@ -214,7 +214,7 @@ canvas {
 
 @media only screen and (min-width: 1500px) {
     canvas {
-        top: 6rem;
+        top: 9rem;
         left: 38%;
         width: 25.8rem;
         height: 31rem;
@@ -223,16 +223,34 @@ canvas {
 
 @media only screen and (min-width: 1600px) {
     canvas {
-        top: 6rem;
+        top: 9rem;
+        left: 38%;
+        width: 25.8rem;
+        height: 31rem;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    canvas {
+        top: 9rem;
         left: 39%;
         width: 25.8rem;
         height: 31rem;
     }
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1800px) {
     canvas {
-        top: 6rem;
+        top: 9rem;
+        left: 39.5%;
+        width: 25.8rem;
+        height: 31rem;
+    }
+}
+
+@media only screen and (min-width: 1900px) {
+    canvas {
+        top: 9rem;
         left: 40%;
         width: 25.8rem;
         height: 31rem;
