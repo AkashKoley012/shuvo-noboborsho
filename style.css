@@ -26,8 +26,8 @@ canvas {
 @media only screen and (max-width: 350px) {
     canvas {
         top: 8rem;
-        left: 2%;
-        width: 22rem;
+        left: 1%;
+        width: 24rem;
         height: 31rem;
     }
 }
@@ -36,7 +36,7 @@ canvas {
     canvas {
         top: 8rem;
         left: 2%;
-        width: 22rem;
+        width: 24rem;
         height: 31rem;
     }
 }
