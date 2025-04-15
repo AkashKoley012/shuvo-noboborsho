@@ -52,12 +52,26 @@ function queueTilesForDrawing(onComplete, tilesPerFrame = 100) {
 }
 
 async function loadImage(src) {
-    return new Promise((resolve, reject) => {
+    const fromDB = await getImageFromDB(src);
+    if (fromDB) {
+        const blob = new Blob([fromDB]);
+        const imgURL = URL.createObjectURL(blob);
         const img = new Image();
-        img.src = src;
-        img.onload = () => resolve(img);
-        img.onerror = reject;
-    });
+        img.src = imgURL;
+        await new Promise((resolve) => (img.onload = resolve));
+        return img;
+    }
+
+    // Else, fetch from server and store
+    const response = await fetch(src);
+    const blob = await response.blob();
+    await storeImageInDB(src, blob);
+
+    const imgURL = URL.createObjectURL(blob);
+    const img = new Image();
+    img.src = imgURL;
+    await new Promise((resolve) => (img.onload = resolve));
+    return img;
 }
 
 async function initMosaic() {
